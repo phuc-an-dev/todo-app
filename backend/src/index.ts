@@ -1,24 +1,21 @@
-// src/index.ts
-import express, {
-  type Application,
-  type Request,
-  type Response,
-} from "express";
-import "dotenv/config"; // Loads .env file
+import "dotenv/config";
+import express, { type Application } from "express";
+import connectDB from "../config/db.ts";
+import taskRouter from "../modules/tasks/task.route.ts";
 
+// Initialize Express app
 const app: Application = express();
 const PORT: number = parseInt(process.env.PORT || "5001", 10);
 
 // Middleware for parsing JSON body
 app.use(express.json());
 
-// A simple test route
-app.get("/", (req: Request, res: Response) => {
-  res
-    .status(200)
-    .json({ message: "API is running! Visit /api/users for user data." });
-});
+// Task routes
+app.use("/api/tasks", taskRouter);
 
-app.listen(PORT, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
+// Start server after DB connection
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
 });
