@@ -1,9 +1,10 @@
+// backend/modules/tasks/task.model
 import mongoose, { Document, Schema } from "mongoose";
 import {
   TASK_STATUS,
   TASK_STATUS_ARRAY,
   type TaskStatus,
-} from "./task.constant.ts";
+} from "./task.constant";
 
 interface ITask extends Document {
   title: string;

@@ -1,7 +1,8 @@
+// backend/modules/tasks/task.controller
 import type { Request, Response } from "express";
-import { getDateRange, type DateFilter } from "../../utils/date.utils.ts";
-import { FACET, TASK_STATUS, type TaskStatus } from "./task.constant.ts";
-import Task from "./task.model.ts";
+import { getDateRange, type DateFilter } from "../../utils/date.utils";
+import { FACET, TASK_STATUS, type TaskStatus } from "./task.constant";
+import Task from "./task.model";
 
 const getAllTasks = async (req: Request, res: Response) => {
   // Extract filter from query parameters

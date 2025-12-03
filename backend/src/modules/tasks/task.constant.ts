@@ -1,4 +1,4 @@
-import type { ValueOf } from "../../utils/types.ts";
+import { type ValueOf } from "../../utils/types";
 
 const TASK_STATUS = {
   ACTIVE: "active",

@@ -1,21 +1,27 @@
+import cors from "cors";
 import "dotenv/config";
-import express, { type Application } from "express";
-import connectDB from "../config/db.ts";
-import taskRouter from "../modules/tasks/task.route.ts";
+import express from "express";
+import connectDB from "./config/db";
+import taskRouter from "./modules/tasks/task.route";
 
-// Initialize Express app
-const app: Application = express();
-const PORT: number = parseInt(process.env.PORT || "5001", 10);
+const app = express();
+const PORT = Number(process.env.PORT) || 5000;
 
-// Middleware for parsing JSON body
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 app.use(express.json());
-
-// Task routes
 app.use("/api/tasks", taskRouter);
 
-// Start server after DB connection
+// Health check
+app.get("/", (req, res) => {
+  res.json({ message: "API is running!" });
+});
+
 connectDB().then(() => {
   app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server running at http://localhost:${PORT}`);
   });
 });

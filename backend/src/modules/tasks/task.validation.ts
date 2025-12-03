@@ -1,5 +1,5 @@
 import Joi from "Joi";
-import { TASK_STATUS, TASK_STATUS_ARRAY } from "./task.constant.ts";
+import { TASK_STATUS_ARRAY } from "./task.constant";
 
 const titleValidation = Joi.string().min(3).max(100).messages({
   "string.base": `"title" should be a type of 'text'`,
@@ -38,4 +38,4 @@ const taskIdSchema = Joi.object({
   id: taskId.required(),
 });
 
-export { createTaskSchema, updateTaskSchema, taskIdSchema };
+export { createTaskSchema, taskIdSchema, updateTaskSchema };

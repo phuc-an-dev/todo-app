@@ -1,16 +1,16 @@
 import { Router } from "express";
-import validateRequest from "../../middlewares/validateRequest.ts";
+import validateRequest from "../../middlewares/validateRequest";
 import {
   createTask,
   deleteTask,
   getAllTasks,
   updateTask,
-} from "./task.controller.ts";
+} from "./task.controller";
 import {
   createTaskSchema,
   taskIdSchema,
   updateTaskSchema,
-} from "./task.validation.ts";
+} from "./task.validation";
 
 const taskRouter = Router();
 
