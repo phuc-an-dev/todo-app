@@ -1,5 +1,5 @@
 import type { NextFunction, Request, Response } from "express";
-import { type ObjectSchema, type ValidationResult } from "Joi";
+import { type ObjectSchema, type ValidationResult } from "joi";
 
 type ValidationLocation = "body" | "query" | "params";
 

@@ -1,4 +1,4 @@
-import Joi from "Joi";
+import Joi from "joi";
 import { TASK_STATUS_ARRAY } from "./task.constant.js";
 
 const titleValidation = Joi.string().min(3).max(100).messages({
