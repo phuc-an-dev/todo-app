@@ -12,7 +12,7 @@ import {
   updateTaskSchema,
 } from "./task.validation.js";
 
-const taskRouter = Router();
+const taskRouter: Router = Router();
 
 taskRouter.get("/", getAllTasks);
 
