@@ -4,7 +4,7 @@ import {
   TASK_STATUS,
   TASK_STATUS_ARRAY,
   type TaskStatus,
-} from "./task.constant";
+} from "./task.constant.js";
 
 interface ITask extends Document {
   title: string;

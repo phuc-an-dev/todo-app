@@ -1,16 +1,16 @@
 import { Router } from "express";
-import validateRequest from "../../middlewares/validateRequest";
+import validateRequest from "../../middlewares/validateRequest.js";
 import {
   createTask,
   deleteTask,
   getAllTasks,
   updateTask,
-} from "./task.controller";
+} from "./task.controller.js";
 import {
   createTaskSchema,
   taskIdSchema,
   updateTaskSchema,
-} from "./task.validation";
+} from "./task.validation.js";
 
 const taskRouter = Router();
 

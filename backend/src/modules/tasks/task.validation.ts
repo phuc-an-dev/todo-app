@@ -1,5 +1,5 @@
 import Joi from "Joi";
-import { TASK_STATUS_ARRAY } from "./task.constant";
+import { TASK_STATUS_ARRAY } from "./task.constant.js";
 
 const titleValidation = Joi.string().min(3).max(100).messages({
   "string.base": `"title" should be a type of 'text'`,
